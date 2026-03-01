@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oldenburg&display=swap');
+
+:root {
+  /* COLORS */
+  --color-primary: #635bff; /* Orange */
+  --color-background: #f6f9fc; /* Off-white */
+  --color-text: #0a2540; /* Dark-green */
+  --color-muted: #a0a0a0;
+  --color-hover: #f0f0f0;
+
+  /* FONTS */
+  --font-family-base: 'Geist', sans-serif;
+  --font-family-title: 'Oldenburg', serif;
+  --font-size-base: 0.8rem;
+  --font-size-s: 1rem;
+  --font-size-sm: 2rem;
+  --font-size-l: 4rem;
+  --font-size-xl: 5rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+
+  /* SPACING */
+  --spacing-xs: 0.25rem;
+  --spacing-s: 0.5rem;
+  --spacing-m: 1rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 4rem;
+
+  /* BORDER RADIUS */
+  --radius-s: 4px;
+  --radius-m: 12px;
+  --radius-l: 99px;
+
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+}

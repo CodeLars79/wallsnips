@@ -1,0 +1,17 @@
+.about-container {
+  max-width: 800px;
+  margin: 100px auto 50px; 
+  padding: 20px;
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+}
+
+.about-text h2 {
+  margin-top: 24px;
+  color: var(--color-text);
+  font-size: 1.2rem;
+}
+
+.about-text p {
+  margin: 8px 0;
+}

@@ -1,0 +1,66 @@
+.getprint-btn-container {
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.getprint-btn {
+   font-family: var(--font-family-base);
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: var(--radius-m);
+  background: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+  max-width: 170px;
+  position: relative;
+}
+
+.btn-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.btn-icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-icon .icon-upward {
+  opacity: 1;
+}
+
+.btn-icon .icon-forward {
+  opacity: 0;
+}
+
+.getprint-btn:hover .icon-upward {
+  opacity: 0;
+}
+
+.getprint-btn:hover .icon-forward {
+  opacity: 1;
+}
+
+
+@media (max-width: 550px) {
+  .getprint-btn-container {
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+

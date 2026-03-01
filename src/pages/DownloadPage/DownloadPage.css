@@ -1,0 +1,182 @@
+.download-page {
+max-width: 1000px;
+margin: auto;
+padding: 100px 20px;
+font-family: var(--font-family-base);
+}
+
+
+.back-button {
+  margin-bottom: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  position: relative; 
+}
+
+
+.back-button img {
+  width: 30px; 
+  height: 30px;
+}
+
+.back-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 110%; 
+  transform: translateY(-50%);
+  background: var(--color-primary);
+  color: var(--color-background);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.back-button:hover .back-tooltip {
+  opacity: 1;
+}
+
+.download-container {
+display: flex;
+gap: 80px;
+align-items: flex-start;
+}
+
+.poster-preview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.poster-preview svg {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  display: block;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.download-menu {
+display: flex;
+flex-direction: column;
+gap: 12px;
+width: 100%;
+}
+
+
+.download-menu h1 {
+font-size: var(--font-size-sm);
+margin: 0;
+}
+
+.h2-title {
+ display: flex;
+  align-items: center;
+  gap: 2px; 
+  font-size: var(--font-size-s);
+  margin: 0;
+}
+
+.download-menu p {
+margin: 0;
+font-size: 16px;
+color: var(--color-text);
+}
+
+.poster-features {
+list-style-type: disc;
+padding-left: 20px;
+margin: 0;
+font-size: var(--font-size-base);
+}
+
+.get-print-btn {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: var(--radius-m);
+  background: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+  max-width: 170px;
+  position: relative;
+}
+
+.btn-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.btn-icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-icon .icon-upward {
+  opacity: 1;
+}
+
+.btn-icon .icon-forward {
+  opacity: 0;
+}
+
+.get-print-btn:hover .icon-upward {
+  opacity: 0;
+}
+
+.get-print-btn:hover .icon-forward {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .download-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .download-menu {
+    max-width: 200px;      /* optional but recommended */
+    margin-inline: auto;  /* centers the menu block */
+  }
+
+  .get-print-btn {
+    margin-left: 0;       /* keep button aligned with text */
+  }
+
+  
+  .poster-preview svg {
+    max-width: 320px;
+  }
+
+  .download-menu h1 {
+font-size: 1.4rem;
+}
+
+}
