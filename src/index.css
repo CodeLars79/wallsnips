@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oldenburg&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+
 
 :root {
   /* COLORS */
@@ -12,6 +14,7 @@
 
   /* FONTS */
   --font-family-base: 'Geist', sans-serif;
+  --font-family-handwritten: "Playpen Sans", cursive;
   --font-family-title: 'Oldenburg', serif;
   --font-size-base: 0.8rem;
   --font-size-s: 1rem;

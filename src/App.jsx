@@ -6,6 +6,8 @@ import Terms from './pages/Terms/Terms'
 import NotFound from './pages/NotFound/NotFound'
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import CookieBanner from "./components/CookieBanner/CookieBanner";
+
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         </Routes>
       </main>
        <Footer />
+        <CookieBanner />
     </>
   )
 }
