@@ -1,6 +1,6 @@
 .filter-panel {
   position: fixed;
-  top: 120px; 
+  top: 100px; 
   left: 30px;
   display: flex;
   flex-direction: column;
@@ -12,8 +12,9 @@
 
 .filter-panel-title {
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: var(--font-size-s);
+  font-weight: 600;
  }
 
 .filter-button-group {
@@ -101,3 +102,43 @@
   color: var(--color-background);
 }
 
+.filter-personalization {
+  margin-top: 1.5rem;
+}
+
+/* Font Selector */
+.font-selector {
+  margin-top: 1rem;
+}
+
+.font-selector h4 {
+  font-size: var(--font-size-s);
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.font-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.font-buttons button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.font-buttons button:hover {
+  border-color: var(--color-text);
+}
+
+.font-buttons button.active {
+  background: var(--color-text);
+  color: var(--color-background);
+  border-color: var(--color-text);
+}

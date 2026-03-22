@@ -151,6 +151,34 @@ font-size: var(--font-size-base);
   opacity: 1;
 }
 
+.free-download-btn {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: var(--radius-m);
+  background: rgb(189, 189, 189);
+  color: var(--color-background);
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+  max-width: 200px;
+  position: relative;
+}
+
+.free-download-btn:hover .icon-upward {
+  opacity: 0;
+}
+
+.free-download-btn:hover .icon-forward {
+  opacity: 1;
+}
+
 
 @media (max-width: 768px) {
   .download-container {

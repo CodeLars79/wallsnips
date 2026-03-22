@@ -49,3 +49,43 @@ hr {
   font-size: var(--font-size-base);
   opacity: 0.5;
 }
+
+/* NAVIGATION */
+.terms-nav {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 30px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.terms-nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  font-family: var(--primary-text);
+  font-size: var(--font-size-base);
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.terms-nav button:hover {
+  opacity: 1;
+}
+
+.terms-nav button.active {
+  opacity: 1;
+  font-weight: 500;
+}
+
+.terms-nav button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+}

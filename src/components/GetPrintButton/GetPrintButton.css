@@ -6,7 +6,7 @@
 }
 
 .getprint-btn {
-   font-family: var(--font-family-base);
+  font-family: var(--font-family-base);
   font-weight: 500;
   padding: 12px 20px;
   border-radius: var(--radius-m);
@@ -20,7 +20,7 @@
   align-items: center;
   gap: 8px;
   transition: transform 0.2s ease;
-  max-width: 170px;
+  width: 160px;
   position: relative;
 }
 
@@ -28,6 +28,10 @@
   position: relative;
   width: 18px;
   height: 18px;
+}
+
+.btn-icon:hover {
+  transform: translateY(-2px);
 }
 
 .btn-icon img {

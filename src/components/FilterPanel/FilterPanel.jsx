@@ -1,7 +1,16 @@
 import { useState, useEffect, useRef } from "react";
+import PersonalizationInput from "../PersonalizationInput/PersonalizationInput";
 import "./FilterPanel.css";
 
-export default function FilterPanel({ options, selected, onChange }) {
+export default function FilterPanel({
+  options,
+  selected,
+  onChange,
+  customText,
+  setCustomText,
+  selectedFont,
+  setSelectedFont,
+}) {
   const [openCategory, setOpenCategory] = useState(null);
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const panelRef = useRef(null);
@@ -43,9 +52,34 @@ export default function FilterPanel({ options, selected, onChange }) {
     },
   };
 
+  const handleSurpriseMe = () => {
+    setOpenCategory(null);
+
+    const newSelection = {};
+    Object.keys(options).forEach((category) => {
+      const items = options[category];
+      const randomIndex = Math.floor(Math.random() * items.length);
+      newSelection[category] = items[randomIndex].id;
+    });
+
+    // Prevent fruits + animals at same time
+    if (newSelection.animals && newSelection.fruits) {
+      if (Math.random() < 0.5) newSelection.animals = null;
+      else newSelection.fruits = null;
+    }
+
+    Object.keys(newSelection).forEach((category) => {
+      onChange(category, newSelection[category]);
+    });
+  };
+
   return (
     <div className="filter-panel" ref={panelRef}>
-      <h2 className="filter-panel-title">Mix and download<br />your cute artwork!</h2>
+      <h2 className="filter-panel-title">
+        Mix your artwork
+      </h2>
+
+      {/* Category Buttons */}
       {Object.keys(options).map((category) => {
         const iconData =
           iconPaths[category.toLowerCase()] || iconPaths.default;
@@ -84,15 +118,14 @@ export default function FilterPanel({ options, selected, onChange }) {
                       selected[category] === opt.id ? "selected" : ""
                     }`}
                     onClick={() => {
-                      // 🧠 Auto-clear logic: prevent fruits + animals being active together
+                      // Prevent fruits + animals conflict
                       if (category === "fruits" && selected.animals) {
-                        onChange("animals", null); 
+                        onChange("animals", null);
                       }
                       if (category === "animals" && selected.fruits) {
-                        onChange("fruits", null); 
+                        onChange("fruits", null);
                       }
 
-                      // Apply current selection
                       onChange(category, opt.id);
                     }}
                   >
@@ -104,6 +137,55 @@ export default function FilterPanel({ options, selected, onChange }) {
           </div>
         );
       })}
+
+      {/* 🎉 Surprise Me */}
+      <div className="filter-button-group">
+        <button className="filter-main-btn" onClick={handleSurpriseMe}>
+          <img
+            src="/assets/icons/stars_2.svg"
+            alt="Surprise icon"
+            className="filter-icon"
+          />
+          <span className="filter-text">Surprise me</span>
+        </button>
+      </div>
+
+      {/* ✨ Personalization Input */}
+      <div className="filter-personalization">
+        <PersonalizationInput
+          value={customText}
+          onChange={setCustomText}
+        />
+      </div>
+
+      {/* ✨ Font Selector */}
+      <div className="font-selector">
+        <h4>Choose font style</h4>
+        <div className="font-buttons">
+          <button
+            className={selectedFont === "geist" ? "active" : ""}
+            onClick={() => setSelectedFont("geist")}
+          >
+            Modern
+          </button>
+
+          <button
+            className={selectedFont === "handwritten" ? "active" : ""}
+            onClick={() => setSelectedFont("handwritten")}
+            style={{ fontFamily: "var(--font-family-handwritten)" }}
+          >
+            Handwritten
+          </button>
+
+          <button
+            className={selectedFont === "typewriter" ? "active" : ""}
+            onClick={() => setSelectedFont("typewriter")}
+            style={{ fontFamily: "'Courier New', monospace" }}
+          >
+            Typewriter
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

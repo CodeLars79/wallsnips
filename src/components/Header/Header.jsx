@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import logo from "/assets/icons/logo.svg";
+import logo from "/assets/icons/logo_fox.svg";
 import "./Header.css";
 
 export default function Header() {

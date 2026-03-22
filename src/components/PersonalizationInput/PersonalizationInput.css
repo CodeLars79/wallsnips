@@ -1,0 +1,39 @@
+.personalization-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-family: "Geist", sans-serif;
+}
+
+.personalization-container h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.personalization-container input {
+  padding: 0.5rem 0.8rem;
+  font-size: var(--font-size-base);
+  font-family: "Geist", sans-serif;
+  font-style: italic;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.2s ease;
+  max-width: 160px;
+  
+}
+
+.personalization-container input:focus {
+  border-color: var(--color-primary);
+}
+
+.personalization-container input::placeholder {
+  color: #bbb;
+  font-style: italic;
+  font-family: "Geist", sans-serif;
+  font-size: var(--font-size-base);
+}
+
